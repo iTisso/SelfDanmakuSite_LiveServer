@@ -53,7 +53,7 @@ function action(data) {
 					return;
 				}
 				if(typeof this.timeout=="number")return;
-				if (typeof msg.data == "object") {
+				if (typeof msg.data == "object"&& msg.data.c) {
 					if (videolist[this.vid] && msg.data.c.length <= 1000) {
 						log("DANMU:" + this.vid + "	" + msg.data.c);
 						this.broadcast("dm", msg.data);
