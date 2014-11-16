@@ -15,5 +15,6 @@ SelfDanmakuSite_LiveServer Node
 	
 即可运行
 
+此服务器和弹幕站可选插件中的online.js配合使用
 
 LICENSE:WTF license
