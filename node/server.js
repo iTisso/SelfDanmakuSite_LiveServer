@@ -88,7 +88,9 @@ function broadcast_in_videolist(type, msg, includeself) {
 		var ind, msg = _(type, msg),l=videolist[this.vid],
 		si = l.indexOf(this);
 		for (ind=l.length;ind--;) {
-			if (includeself || ind != si) l[ind].send(msg);
+			if (includeself || ind != si){
+				l[ind].send(msg,ignoreerr);
+			}
 		}
 	}
 }
@@ -99,6 +101,10 @@ function socketverify(info) { //提取origin里的域名或ip和设置的来源�
 	return true;
 }
 
+function ignoreerr(e){
+	if(e!=undefined)
+	log(e);
+}
 function _(type, data) {
 	return JSON.stringify({
 		type: type,
